@@ -1,13 +1,13 @@
 <aside class="light-bg dark-content">
   <h1 class="text-center">Leave me a message</h1>
-  <form>
-    <input class="input" type="text" name="name" placeholder="Name" />
-    <input class="input"type="email" name="mail" placeholder="Email address" />
-    <textarea class="input" type="message" name="message" placeholder="Message"></textarea>
-    <button type="submit">
-      <i class="material-icons">send</i> Send!
-    </button>
-  </form>
+  <%= form_tag action: "contactSend" do %>
+      <input class="input" required type="text" name="contact[from]" placeholder="Name" />
+      <input class="input" required type="email" name="contact[email]" placeholder="Email address" />
+      <textarea class="input" required type="message" name="contact[content]" placeholder="Message"></textarea>
+      <button type="submit">
+        <i class="material-icons">send</i> Send!
+      </button>
+  <%end%>
 </aside>
 
 <aside class="dark-bg light-content">

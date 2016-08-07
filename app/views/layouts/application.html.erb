@@ -209,6 +209,7 @@
         </nav>
       </div>
     </header>
+    <div><%= render partial: "shared/flash_messages", flash: flash %></div>
     <div class="container">
       <% unless @title.nil? %>
         <h3 class="title"><%= @title %></h3>

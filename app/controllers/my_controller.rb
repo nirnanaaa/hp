@@ -6,6 +6,25 @@ class MyController < ApplicationController
     for your business and for your consumers."
   end
 
+  def contactSend
+    parms = params.require(:contact).permit(:content, :email, :from)
+    if parms[:from].empty? || parms[:email].empty? || parms[:content].empty?
+      redirect_to 'my/contact', flash: 'Some fields are missing!'
+      return
+    end
+    data = {
+      from: parms[:from],
+      email: parms[:email],
+      content: parms[:content],
+      timestamp: Firebase::ServerValue::TIMESTAMP
+    }
+    resp = $firebase.push('/contact', data)
+    if !resp.success?
+      flash[:error] = 'Some fields are missing!'
+    end
+    redirect_to 'my/contact'
+  end
+
   def projects
     @active = 'React.Edges.Projects'
     @title = "This is what I love to do."

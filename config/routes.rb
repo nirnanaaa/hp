@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'legal/imprint'
 
   get 'my/contact'
+  post 'my/contact-me' => 'my#contactSend'
 
   get 'my/projects'
 
