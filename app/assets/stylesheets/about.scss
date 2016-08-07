@@ -1,0 +1,28 @@
+.whoami {
+  display: flex;
+  @media(max-width: 768px) {
+    flex-direction: column;
+  }
+  .item {
+    box-sizing: border-box;
+
+    &.left {
+      @media(min-width: 768px) {
+        width: 30%;
+      }
+      img {
+        width: 100%;
+        display: block;
+      }
+    }
+    &.right {
+      @media(min-width: 768px) {
+        width: 70%;
+      }
+    }
+    @media(max-width: 768px) {
+      width: 100%;
+      padding: 15px;
+    }
+  }
+}

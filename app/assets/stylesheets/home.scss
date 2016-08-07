@@ -1,0 +1,31 @@
+.home {
+  display: flex;
+  background-image: url('/assets/blurred.jpg');
+  background-size: cover;
+  color: #f9f9f9;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+
+  .title {
+    font-size: 70px;
+    text-align: left;
+    @media (min-width: 769px) {
+      font-size: 90px;
+      text-align: right;
+    }
+    text-transform: uppercase;
+    font-family: 'Droid Sans', sans;
+    .top,
+    .bottom {
+      line-height: 0.8;
+    }
+    .top {
+      color: #f9f9f9;
+    }
+    .bottom {
+      border-top: 1px solid #EDCD1F;
+      color: #EDCD1F;
+    }
+  }
+}

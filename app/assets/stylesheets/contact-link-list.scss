@@ -1,0 +1,32 @@
+.platform-links {
+  .link {
+    @media(max-width: 768px) {
+      flex-direction: column;
+      border-bottom: 1px solid #ccc;
+      margin-bottom: 30px;
+    }
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    div {
+      padding: 10px;
+      width: 33%;
+      @media(max-width: 768px) {
+        width: 100%;
+      }
+    }
+    .service {
+      font-size: 25px;
+      text-align: right;
+    }
+    .name {
+    }
+    .link {
+      a {
+        color: #f9f9f9;
+        text-decoration: none;
+      }
+    }
+  }
+}

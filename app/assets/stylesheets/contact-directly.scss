@@ -1,0 +1,18 @@
+.contact-directly {
+  display: flex;
+  justify-content: center;
+  .items {
+    .item {
+      display: flex;
+      margin-bottom: 10px;
+      align-items: flex-start;
+      .icon {
+        margin-right: 14px;
+        i {
+          font-size: 30px;
+        }
+      }
+      .text {}
+    }
+  }
+}

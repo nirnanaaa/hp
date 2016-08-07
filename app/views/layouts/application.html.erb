@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Florian Kasper - Architect, Developer, Mentor, Triathlete</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <link href="https://fonts.googleapis.com/css?family=Droid+Sans|Raleway|Material+Icons" rel="stylesheet" />
+    <%= csrf_meta_tags %>
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org/",
+        "@type": "Person",
+        "name": "Florian Kasper",
+        "image": "https://www.xing.com/image/9_b_7_f75c3a5b1_22015043_2/florian-kasper-foto.64x64.jpg",
+        "description": "Working on software development for the past eleven years, my hobby evolved into a passion, a passion that drives my life and inspires many other people to think the same way.",
+        "jobtitle": "Senior Software Developer",
+        "email": "florian.kasper@fk-consult.in",
+        "birthDate": "1995-01-22",
+        "url": "http://fk-consult.in"
+       }
+    </script>
+    <style>
+      html, body {
+        font-family: 'Droid Sans', sans-serif;
+        width: 100%;
+        font-size: 16px;
+        line-height: 1.42857143;
+        padding: 0;
+        margin: 0;
+        background-color: #fff;
+        color: #7b7c7e
+      }
+      #startup {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+
+        -moz-user-select: none;
+        -webkit-user-select: none;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        display: -webkit-box;
+        display: -webkit-flex;
+        -webkit-align-items: center;
+        -webkit-justify-content: center;
+        flex-direction: column;
+        -webkit-flex-direction: column;
+      }
+
+      .spinner-container {
+        -webkit-animation: rotate 2s linear infinite;
+        animation: rotate 2s linear infinite;
+        z-index: 2;
+      }
+
+      .spinner-container .path {
+        stroke-dasharray: 1,150;
+        stroke-dashoffset: 0;
+        stroke: rgba(27, 154, 89, 0.7);
+        stroke-linecap: round;
+        -webkit-animation: dash 1.5s ease-in-out infinite;
+        animation: dash 1.5s ease-in-out infinite;
+      }
+
+      #startup .spinner-container .path {
+        stroke: #acb9bf;
+      }
+
+      @keyframes rotate {
+        100% { transform: rotate(360deg); }
+      }
+      @-webkit-keyframes rotate{
+        100% { -webkit-transform: rotate(360deg); }
+      }
+
+      @keyframes dash {
+        0% {
+        stroke-dasharray: 1,150;
+        stroke-dashoffset: 0;
+        }
+        50% {
+        stroke-dasharray: 90,150;
+        stroke-dashoffset: -35;
+        }
+        100% {
+        stroke-dasharray: 90,150;
+        stroke-dashoffset: -124;
+        }
+      }
+      @-webkit-keyframes dash {
+        0% {
+        stroke-dasharray: 1,150;
+        stroke-dashoffset: 0;
+        }
+        50% {
+        stroke-dasharray: 90,150;
+        stroke-dashoffset: -35;
+        }
+        100% {
+        stroke-dasharray: 90,150;
+        stroke-dashoffset: -124;
+        }
+      }
+
+      .progress-container {
+        width: 360px;
+        position: fixed;
+        padding-top: 120px;
+        top: 50%;
+        left: 50%;
+        margin-left: -180px;
+      }
+
+      @keyframes appear {
+        0% {
+        opacity: 0.5;
+        transform: scaleY(0);
+        }
+        100% {
+        opacity: 1;
+        transform: scaleY(1);
+        }
+      }
+      @-webkit-keyframes appear {
+        0% {
+        opacity: 0.5;
+        transform: scaleY(0);
+        }
+        100% {
+        opacity: 1;
+        transform: scaleY(1);
+        }
+      }
+
+      progress {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 100%;
+        height: 3px;
+        border: none;
+        margin: 0;
+        opacity: 0;
+
+        animation: appear .3s ease-out forwards;
+        animation-delay: .2s;
+        -webkit-animation: appear .3s ease-out forwards;
+        -webkit-animation-delay: .2s;
+
+        color: #02d1a4;
+        background-color: #e0e4e5;
+      }
+
+      progress[value]::-webkit-progress-bar {
+        background-color: #e0e4e5;
+      }
+
+      progress[value]::-webkit-progress-value {
+        background-color: #02d1a4;
+      }
+
+      progress[value]::-moz-progress-bar {
+        background-color: #02d1a4;
+      }
+    </style>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+  </head>
+
+  <body class="<%= @css_optional %>">
+    <header class="top-bar">
+      <div class="container">
+        <section
+          class="mobileNav"
+          data-module="React.Modules.MobileNav"
+          data-active="<%= @active %>"
+        >
+        </section>
+        <a
+          class="logo"
+          href="/"
+          title="Back to Home"
+          data-module="React.Data.Title"
+        >
+          <div class="wrapper">
+            <span class="top">Florian</span>
+            <span class="bottom">Kasper</span>
+          </div>
+        </a>
+        <nav class="nav">
+          <menu class="desktop">
+            <!-- <li>
+              <%= module_link 'React.Edges.Development', '/my/development' %>
+            </li>
+            <li>
+              <%= module_link 'React.Edges.Projects', '/my/projects' %>
+            </li>
+            <li>
+              <%= module_link 'React.Edges.Work', '/my/work' %>
+            </li> -->
+            <li>
+              <%= module_link 'React.Edges.About', '/my/about' %>
+            </li>
+            <li>
+              <%= module_link 'React.Edges.Contact', '/my/contact' %>
+            </li>
+          </menu>
+        </nav>
+      </div>
+    </header>
+    <div class="container">
+      <% unless @title.nil? %>
+        <h3 class="title"><%= @title %></h3>
+      <% end %>
+      <% unless @subtitle.nil? %>
+        <p class="subtitle"><%= @subtitle %></p>
+      <% end %>
+    </div>
+    <div id="root">
+      <%= yield %>
+    </div>
+    <% if @hideFooter.nil? %>
+    <footer class="page-footer">
+      <div class="items">
+        <a class="part facebook" target="_blank" href="https://facebook.com/fkconsultin">facebook</a>
+        <a class="part xing" target="_blank" href="https://www.xing.com/profile/Florian_Kasper8">XING</a>
+        <a class="part imprint" href="/legal/imprint">Imprint</a>
+      </div>
+    </footer>
+    <% end %>
+    <script src="<%= asset_url 'scripts/core.js' %>" async></script>
+  </body>
+</html>
