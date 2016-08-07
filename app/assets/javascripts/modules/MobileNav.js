@@ -42,7 +42,7 @@ export class MobileNav extends Component {
           <i className="material-icons">{open ? 'close' : 'menu'}</i>
         </div>
         <menu className="items" style={styles.pos}>
-          <li style={styles.disabled}>
+          <li>
             {this.navItem('React.Edges.Home', 'Home', '/')}
           </li>
           <li style={styles.disabled}>

@@ -1,0 +1,78 @@
+.project {
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Droid Sans', serif;
+  cursor: pointer;
+  text-decoration: none;
+
+  *:after {
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background-color: #f9f9f9;
+    content: "";
+    transition: width 0.2s;
+  }
+
+  &:hover .labels h1:after {
+    width: 100%;
+  }
+  position: relative;
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 5;
+    background-image: radial-gradient(circle, rgba(0,0,0,0.4), rgba(0,0,0,0.1));
+  }
+  .labels {
+    z-index: 6;
+    position: relative;
+    margin-left: 8.33333333%;
+    color: #f9f9f9;
+    text-decoration: none;
+    outline: none;
+    display: inline-block;
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    -moz-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+  }
+  .images {
+    margin-top: 10px;
+    display: flex;
+    img {
+      display: block;
+      margin: 5px;
+    }
+  }
+  h1 {
+    position: relative;
+    font-weight: bold;
+    bottom: auto;
+    margin-bottom: 10px;
+    font-size: 48px;
+    // font-size: 5.4rem;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    line-height: 4.8rem;
+  }
+
+}
+aside.dark-content .project h1,
+aside.dark-content .project .labels {
+  color: #1E2D3B;
+}
+aside.dark-content .project h1 {
+  border-bottom: 1px solid #1E2D3B;
+}
+
+aside.light-content .project h1,
+aside.light-content .project .labels {
+  color: #f9f9f9;
+}

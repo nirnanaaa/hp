@@ -1,10 +1,12 @@
 import DataTitle from './modules/Title';
 import Autoresize from './modules/autoresize';
 import MobileNav from './modules/MobileNav';
+import ProjectItem from './modules/ProjectItem';
 const modules = {
   'React.Data.Title': DataTitle,
   'React.Modules.MobileNav': MobileNav,
-  'AUTORESIZE': Autoresize
+  'AUTORESIZE': Autoresize,
+  'React.Project.Item': ProjectItem,
 };
 
 // module loader
