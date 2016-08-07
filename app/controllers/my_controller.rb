@@ -9,7 +9,7 @@ class MyController < ApplicationController
   def contactSend
     parms = params.require(:contact).permit(:content, :email, :from)
     if parms[:from].empty? || parms[:email].empty? || parms[:content].empty?
-      redirect_to 'my/contact', flash: 'Some fields are missing!'
+      redirect_to '/my/contact', flash: 'Some fields are missing!'
       return
     end
     data = {
@@ -22,7 +22,7 @@ class MyController < ApplicationController
     if !resp.success?
       flash[:error] = 'Some fields are missing!'
     end
-    redirect_to 'my/contact'
+    redirect_to '/my/contact'
   end
 
   def projects
