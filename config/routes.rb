@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   get 'my/contact'
   post 'my/contact-me' => 'my#contactSend'
-
+  get 'my/projects/:id' => 'my#projectDetails'
   get 'my/projects'
 
   get 'my/about'
